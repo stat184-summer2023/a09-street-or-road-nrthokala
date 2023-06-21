@@ -1,6 +1,6 @@
 ---
 title: "Activity: Street or Road?"
-author: "YOUR NAME HERE"
+author: "Neeraj Thokala"
 output: html_notebook
 ---
 
@@ -12,14 +12,17 @@ output: html_notebook
 #load in the data here 
 # we will only be using the "street-addresses.csv" file from the text
 
-
+read_csv("https://mdbeckman.github.io/dcSupplement/data/street-addresses.csv")
 
 ```
 
 ## Recreate Solved Example using `sample(50)`
 
 ```{r}
-
+Addresses <- read_csv("https://mdbeckman.github.io/dcSupplement/data/street-addresses.csv")
+Sample <- 
+  Addresses %>%
+  sample_n(size = 50)
 
 ```
 
