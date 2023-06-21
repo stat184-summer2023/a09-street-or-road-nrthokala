@@ -36,11 +36,13 @@ Sample <-
 #### Additional Question: How many addresses are a PO BOX (including NCSU BOX)? 
 
 ```{r}
-
+Matches <- 
+  Sample %>%
+  filter(grepl(pattern = "PO", pattern = "NCSU", address))
 
 ```
 
-My answer here...... 
+Over 100 addresses
 
 
 ## Back to the Streets: Your Turn
@@ -57,7 +59,7 @@ LeftOvers <-
           )
 ```
 
-My answer here.......
+We are looking for address that start with St or Rd / Road, and then we create a new function called leftovers, where within the Addresses dataset we filter out all the address with the appropriate appartment unit and adress as well as the Box number for each particualar address that is filtered out from the data set. The appartment and unit number is wanted, therefore the regex includes an identifier for the number inside extraction parentheses.
 
 #### Part 2: Implement your method on the entire `Addresses` data set. Explain how your code works line by line.
 
