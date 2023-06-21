@@ -8,6 +8,8 @@ output: html_notebook
 
 ```{r}
 #load libraries 
+library(dplyr)
+library(ggplot2)
 
 #load in the data here 
 # we will only be using the "street-addresses.csv" file from the text
@@ -74,7 +76,9 @@ My answer here.......
 #### Additional Question 1: Present your result from part 2 by providing a table in descending order of popularity for the street name endings you found
 
 ```{r}
+library(dplyr)
 
+Addresses %>% arrange(desc(pop))
 
 ```
 
@@ -83,9 +87,16 @@ My answer here.......
 Note: make sure your order street names according to popularity, not alphabetically.
 
 ```{r}
+library(dplyr)
+library(ggplot2)
 
+Addresses %>%
+  filter(desc(pop))
+
+ggplot(Addresses, aes(x = popularity, y = streetname)) +
+  geom_point()
 ```
 
 #### Additional Question 3: Comment on any patterns you see
 
-My answer here.......
+I noticed that while some street names are more popular than others, there is no specific correlation between what names are popular and what names aren't meaning there is no clear cut way to predict what street names will be most popular going forward.
